@@ -2,25 +2,31 @@
 <html lang="th">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ผลลัพธ์แม่สูตรคูณ</title>
+    <title>สูตรคูณ While Loop</title>
 </head>
 <body>
 
+<h1 style="color:orange">งานที่ 1 เกศเกล้า เสือโภชน์ BIT24 เลขที่ 14</h1>
+
+<form method="get">
+    <label>เลขแม่สูตรคูณ</label><br>
+    <input type="number" name="num" required>
+    <input type="submit" value="คำนวณ">
+</form>
+
 <?php
+if(isset($_GET["num"])){
 
-if (isset($_GET["num"])) {
+    $num = $_GET["num"];
 
-    $num = (int)$_GET["num"];
-
-    echo "<h3>สูตรคูณแม่ $num</h3>";
+    echo "<h3>สูตรคูณแม่ $num (While Loop)</h3>";
 
     echo "<table border='1' cellpadding='5'>";
     echo "<tr><th>สูตร</th><th>ผลลัพธ์</th></tr>";
 
     $i = 1;
 
-    while ($i <= 12) {
+    while($i <= 12){
         $result = $num * $i;
 
         echo "<tr>";
@@ -32,15 +38,11 @@ if (isset($_GET["num"])) {
     }
 
     echo "</table>";
-
-    echo "<br><br>";
-    echo "<a href='index.php'>กลับหน้าหลัก</a>";
-
-} else {
-    echo "ไม่พบข้อมูล";
 }
-
 ?>
+
+<br><br>
+<a href="index.php">ไปหน้า For Loop</a>
 
 </body>
 </html>
